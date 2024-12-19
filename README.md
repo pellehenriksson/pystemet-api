@@ -1,6 +1,7 @@
 # pystemet-api
 
-
 ## Fast API
+- https://fastapi.tiangolo.com/
 
-- Project structure: https://medium.com/@amirm.lavasani/how-to-structure-your-fastapi-projects-0219a6600a8f
+## SQLModel
+- https://sqlmodel.tiangolo.com/
