@@ -13,7 +13,9 @@ async def init_db() -> None:
     async with engine.begin() as connection:
         from .schemas import Producer
         from .schemas import Supplier
-        
+        from .schemas import ItemStyle
+        from .schemas import ItemType
+
         await connection.run_sync(SQLModel.metadata.create_all)
 
         #sql = text("SELECT 'Hello SQL'")
