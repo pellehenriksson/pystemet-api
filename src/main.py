@@ -1,7 +1,9 @@
 from fastapi import Depends, FastAPI
 from starlette.responses import RedirectResponse
-from .producers import routes as p_routes
-from .suppliers import routes as s_routes
+from .producers import routes as producers_routes
+from .suppliers import routes as suppliers_routes
+from .item_types import routes as item_types_routes
+from .item_styles import routes as item_styles_routes
 from .db.main import init_db
 from contextlib import asynccontextmanager
 
@@ -20,8 +22,10 @@ app = FastAPI(
     version=version,
     lifespan=lifespan)
 
-app.include_router(p_routes.router)
-app.include_router(s_routes.router)
+app.include_router(producers_routes.router)
+app.include_router(suppliers_routes.router)
+app.include_router(item_types_routes.router)
+app.include_router(item_styles_routes.router)
 
 @app.get("/")
 def root():
