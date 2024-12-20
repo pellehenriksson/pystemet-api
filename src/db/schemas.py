@@ -39,9 +39,9 @@ class Item(SQLModel, table=True):
     origin_country: str | None
     is_organic: bool = Field(nullable=False)
     is_ethical: bool = Field(nullable=False)
-    producer_id: int = Field(default=None, foreign_key="producers.id")
-    supplier_id: int = Field(default=None, foreign_key="suppliers.id")
-    item_type_id: int = Field(default=None, foreign_key="item_types.id")
+    producer_id: int | None = Field(default=None, foreign_key="producers.id")
+    supplier_id: int | None = Field(default=None, foreign_key="suppliers.id")
+    item_type_id: int | None = Field(default=None, foreign_key="item_types.id")
     item_style_id: int | None  = Field(default=None, foreign_key="item_styles.id")
     created_at: datetime = Field(sa_column=Column(pg.TIMESTAMP, default=datetime.now))
 
